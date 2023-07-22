@@ -5,23 +5,12 @@ let score = 0;
 let gameOn = false;
 const body = document.body;
 const buttonStart = document.querySelector('.start');
-// const lightHoriz3 = document.getElementById('horiz3');
-// const lightHoriz4 = document.getElementById('horiz4');
-// const lightHoriz5 = document.getElementById('horiz5');
-// const lightHoriz6 = document.getElementById('horiz6');
-// const lightHoriz7 = document.getElementById('horiz7');
-// const lightVertic1 = document.getElementById('vertic1');
-// const lightVertic2 = document.getElementById('vertic2');
-// const lightVertic3 = document.getElementById('vertic3');
-// const lightVertic4 = document.getElementById('vertic4');
-// const lightVertic5 = document.getElementById('vertic5');
-// const lightVertic6 = document.getElementById('vertic6');
 const lights = document.querySelectorAll('.light');
 const buttons = document.querySelectorAll('.button');
 let scoreDisplay = document.getElementById('scoreValue');
 const timeLeft = document.getElementById('displayCounter');
 
-scoreDisplay.innerHTML = score;
+scoreDisplay.innerHTML = `score: ${score}`;
 timeLeft.innerHTML = 60;
 
 const counterStart = () => {
@@ -33,7 +22,7 @@ const counterStart = () => {
         timeLeft.innerHTML--;
       } else {
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         clearInterval(counter);
         gameOn = false;
@@ -48,46 +37,36 @@ const rollRandomNumber = (maxNumber) => {
 
 const gameStart = () => {
   if (!gameOn) {
+    score = 0;
+    scoreDisplay.innerHTML = `score: ${score}`;
     rolledNumber1 = rollRandomNumber(6);
     rolledNumber2 = rollRandomNumber(6);
     if (rolledNumber1 == 0) {
-      lights[1].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[1].classList.add('lightOn');
     } else if (rolledNumber1 == 1) {
-      lights[2].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[2].classList.add('lightOn');
     } else if (rolledNumber1 == 2) {
-      lights[3].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[3].classList.add('lightOn');
     } else if (rolledNumber1 == 3) {
-      lights[4].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[4].classList.add('lightOn');
     } else if (rolledNumber1 == 4) {
-      lights[5].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[5].classList.add('lightOn');
     } else if (rolledNumber1 == 5) {
-      lights[6].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[6].classList.add('lightOn');
     }
 
     if (rolledNumber2 == 0) {
-      lights[7].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[7].classList.add('lightOn');
     } else if (rolledNumber2 == 1) {
-      lights[8].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[8].classList.add('lightOn');
     } else if (rolledNumber2 == 2) {
-      lights[9].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[9].classList.add('lightOn');
     } else if (rolledNumber2 == 3) {
-      lights[10].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[10].classList.add('lightOn');
     } else if (rolledNumber2 == 4) {
-      lights[11].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[11].classList.add('lightOn');
     } else if (rolledNumber2 == 5) {
-      lights[12].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[12].classList.add('lightOn');
     }
   }
 };
@@ -97,43 +76,31 @@ const gameContinue = () => {
     rolledNumber1 = rollRandomNumber(6);
     rolledNumber2 = rollRandomNumber(6);
     if (rolledNumber1 == 0) {
-      lights[1].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[1].classList.add('lightOn');
     } else if (rolledNumber1 == 1) {
-      lights[2].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[2].classList.add('lightOn');
     } else if (rolledNumber1 == 2) {
-      lights[3].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[3].classList.add('lightOn');
     } else if (rolledNumber1 == 3) {
-      lights[4].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[4].classList.add('lightOn');
     } else if (rolledNumber1 == 4) {
-      lights[5].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[5].classList.add('lightOn');
     } else if (rolledNumber1 == 5) {
-      lights[6].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[6].classList.add('lightOn');
     }
 
     if (rolledNumber2 == 0) {
-      lights[7].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[7].classList.add('lightOn');
     } else if (rolledNumber2 == 1) {
-      lights[8].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[8].classList.add('lightOn');
     } else if (rolledNumber2 == 2) {
-      lights[9].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[9].classList.add('lightOn');
     } else if (rolledNumber2 == 3) {
-      lights[10].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[10].classList.add('lightOn');
     } else if (rolledNumber2 == 4) {
-      lights[11].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[11].classList.add('lightOn');
     } else if (rolledNumber2 == 5) {
-      lights[12].style.backgroundImage =
-        'radial-gradient(#e33, rgb(242, 219, 219))';
+      lights[12].classList.add('lightOn');
     }
   }
 };
@@ -145,7 +112,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 0 && rolledNumber2 == 0) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -160,7 +127,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 1 && rolledNumber2 == 0) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -175,7 +142,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 2 && rolledNumber2 == 0) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -190,7 +157,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 3 && rolledNumber2 == 0) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -205,7 +172,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 4 && rolledNumber2 == 0) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -220,7 +187,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 5 && rolledNumber2 == 0) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -235,7 +202,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 0 && rolledNumber2 == 1) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -250,7 +217,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 1 && rolledNumber2 == 1) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -265,7 +232,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 2 && rolledNumber2 == 1) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -280,7 +247,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 3 && rolledNumber2 == 1) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -295,7 +262,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 4 && rolledNumber2 == 1) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -310,7 +277,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 5 && rolledNumber2 == 1) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -325,7 +292,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 0 && rolledNumber2 == 2) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -340,7 +307,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 1 && rolledNumber2 == 2) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -355,7 +322,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 2 && rolledNumber2 == 2) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -370,7 +337,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 3 && rolledNumber2 == 2) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -385,7 +352,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 4 && rolledNumber2 == 2) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -400,7 +367,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 5 && rolledNumber2 == 2) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -415,7 +382,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 0 && rolledNumber2 == 3) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -430,7 +397,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 1 && rolledNumber2 == 3) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -445,7 +412,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 2 && rolledNumber2 == 3) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -460,7 +427,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 3 && rolledNumber2 == 3) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -475,7 +442,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 4 && rolledNumber2 == 3) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -490,7 +457,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 5 && rolledNumber2 == 3) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -505,7 +472,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 0 && rolledNumber2 == 4) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -520,7 +487,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 1 && rolledNumber2 == 4) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -535,7 +502,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 2 && rolledNumber2 == 4) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -550,7 +517,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 3 && rolledNumber2 == 4) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -565,7 +532,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 4 && rolledNumber2 == 4) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -580,7 +547,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 5 && rolledNumber2 == 4) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -595,7 +562,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 0 && rolledNumber2 == 5) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -610,7 +577,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 1 && rolledNumber2 == 5) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -625,7 +592,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 2 && rolledNumber2 == 5) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -640,7 +607,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 3 && rolledNumber2 == 5) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -655,7 +622,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 4 && rolledNumber2 == 5) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -670,7 +637,7 @@ const checkMatch = (e) => {
       if (rolledNumber1 == 5 && rolledNumber2 == 5) {
         score += 1;
         lights.forEach((light) => {
-          light.style.backgroundImage = '';
+          light.classList.remove('lightOn');
         });
         gameContinue();
       } else {
@@ -682,7 +649,7 @@ const checkMatch = (e) => {
       }
       break;
   }
-  scoreDisplay.innerHTML = score;
+  scoreDisplay.innerHTML = `score: ${score}`;
 };
 buttonStart.addEventListener('click', gameStart);
 buttonStart.addEventListener('click', counterStart);
