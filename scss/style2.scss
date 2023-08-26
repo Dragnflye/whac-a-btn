@@ -1,0 +1,36 @@
+@import 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.board {
+    // display: grid;
+    width: 80vh;
+    height: 80vh;
+    margin: auto;
+    background-color: $board-color;
+    &__lights {
+        display: grid;
+        // width: 90%;
+        // height: 90%;
+    }
+    &__lights--horizontal {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
+    &__lights--vertical {
+        display: grid;
+        grid-template-columns: 121px;
+        grid-template-rows: repeat(6, $rows);
+    }
+}
+
+.light {
+    width: 4.5vw;
+    height: 4.5vw;
+    margin: auto;
+    background-color: blueviolet;
+    border-radius: 50%;
+}
