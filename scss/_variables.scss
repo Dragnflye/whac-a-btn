@@ -1,3 +1,11 @@
-$board-color: beige;
-$columns: calc(100% / 7);
-$rows: calc((100% - (100% / 7)) / 5)
+$bcgcolor: #F0F4EF;
+$board-size: 80vmin;
+$board-color: #B8DBD9;
+$button-size: 8vmin;
+$light-size: 8vmin;
+$button-color: blueviolet;
+$button-box-shadow: 0 6px 4px #333;
+$button-color-hover: rgb(106, 35, 173);
+$light-color: radial-gradient(#c6a9a9, #f2dbdb);
+$ligh-on-color: radial-gradient(#e33, #f2dbdb);
+$light-box-shadow: 0 0 6px #6a2a2a;

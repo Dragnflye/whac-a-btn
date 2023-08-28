@@ -17,7 +17,7 @@ class Lights {
   }
   resetLights() {
     this.lights.forEach((light) => {
-      light.classList.remove('lightOn');
+      light.classList.remove('light--on');
     });
   }
   getRandomLights(isRunning) {
@@ -28,35 +28,35 @@ class Lights {
       // const horizontalLights = lights.slice(1, 6);
       // const verticalLights = lights.slice(7);
 
-      // lightOn(horizontalLights, rolledNumber1);
-      // lightOn(verticalLights, rolledNumber2);
+      // light--on(horizontalLights, rolledNumber1);
+      // light--on(verticalLights, rolledNumber2);
 
       if (this.#rolledNumber1 == 0) {
-        this.lights[1].classList.add('lightOn');
+        this.lights[0].classList.add('light--on');
       } else if (this.#rolledNumber1 == 1) {
-        this.lights[2].classList.add('lightOn');
+        this.lights[1].classList.add('light--on');
       } else if (this.#rolledNumber1 == 2) {
-        this.lights[3].classList.add('lightOn');
+        this.lights[2].classList.add('light--on');
       } else if (this.#rolledNumber1 == 3) {
-        this.lights[4].classList.add('lightOn');
+        this.lights[3].classList.add('light--on');
       } else if (this.#rolledNumber1 == 4) {
-        this.lights[5].classList.add('lightOn');
+        this.lights[4].classList.add('light--on');
       } else if (this.#rolledNumber1 == 5) {
-        this.lights[6].classList.add('lightOn');
+        this.lights[5].classList.add('light--on');
       }
 
       if (this.#rolledNumber2 == 0) {
-        this.lights[7].classList.add('lightOn');
+        this.lights[6].classList.add('light--on');
       } else if (this.#rolledNumber2 == 1) {
-        this.lights[8].classList.add('lightOn');
+        this.lights[7].classList.add('light--on');
       } else if (this.#rolledNumber2 == 2) {
-        this.lights[9].classList.add('lightOn');
+        this.lights[8].classList.add('light--on');
       } else if (this.#rolledNumber2 == 3) {
-        this.lights[10].classList.add('lightOn');
+        this.lights[9].classList.add('light--on');
       } else if (this.#rolledNumber2 == 4) {
-        this.lights[11].classList.add('lightOn');
+        this.lights[10].classList.add('light--on');
       } else if (this.#rolledNumber2 == 5) {
-        this.lights[12].classList.add('lightOn');
+        this.lights[11].classList.add('light--on');
       }
     }
   }
@@ -109,7 +109,7 @@ class Buttons {
     // if (abc.matrix[rolledNumber2][rolledNumber1].id === lastClickedButton) {
     //   score += 1;
     //   lights.forEach((light) => {
-    //     light.classList.remove('lightOn');
+    //     light.classList.remove('light--on');
     //   });
     //   gameContinue();
     // } else {
@@ -383,11 +383,11 @@ class Buttons {
 const buttons = new Buttons();
 
 class GameMain {
-  constructor(time, buttonSelector) {
+  constructor(time) {
     this.body = document.body;
     this.buttons = document.querySelectorAll('.button');
     this.scoreDisplay = document.getElementById('scoreValue');
-    this.buttonStart = document.querySelector(buttonSelector);
+    this.buttonStart = document.querySelector('.game-stats__start');
     this.timeLeft = document.getElementById('displayCounter');
     this.time = time;
     this.score = 0;
@@ -463,4 +463,4 @@ class GameMain {
   }
 }
 
-const game = new GameMain(60, '.start');
+const game = new GameMain(60);

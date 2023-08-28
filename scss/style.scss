@@ -1,0 +1,140 @@
+@import 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: $bcgcolor;
+}
+
+.board {
+    aspect-ratio: 1;
+    width: $board-size;
+    margin: auto;
+    background-color: $board-color;
+    border-radius: 2%;
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(10px, 1fr));
+        grid-template-rows: repeat(7, minmax(10px, 1fr));
+        width: 100%;
+        height: 100%;
+    }
+    &__lights--horizontal {
+        grid-column: 2 / span 6;
+        grid-row: 1 / span 1;
+        display: grid;
+        grid-template-columns: repeat(6, minmax(10px, 1fr));
+    }
+    &__lights--vertical {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 6;
+        display: grid;
+        grid-template-rows: repeat(6, minmax(10px, 1fr));
+    }
+    &__buttons {
+        grid-column: 2 / span 6;
+        grid-row: 2 / span 6;
+        display: grid;
+        grid-template-columns: repeat(6, minmax(10px, 1fr));
+        grid-template-rows: repeat(6, minmax(10px, 1fr));
+    }
+}
+
+.light {
+    aspect-ratio: 1;
+    width: $light-size;
+    margin: auto;
+    background-image: $light-color;
+    box-shadow: $light-box-shadow;
+    border-radius: 50%;
+    &--on {
+        background-image: $ligh-on-color;
+    }
+}
+
+.button {
+    aspect-ratio: 1;
+    width: $button-size;
+    margin: auto;
+    background-color: $button-color;
+    box-shadow: $button-box-shadow;
+    border-radius: 50%;
+    &:hover {
+        background-color: $button-color-hover;
+    }
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5vh;
+    &__start {
+        display: block;
+        padding: 5px 8px;
+        background-color: lightgray;
+        font-family: arial;
+        font-size: 2rem;
+        letter-spacing: 1px;
+        text-align: center;
+        text-transform: uppercase;
+        border: 4px solid black;
+        border-radius: 10px;
+        transition: .1s;
+        &:hover {
+            background-color: #333;
+            color: beige;    
+        }
+        @media (min-width: 360px) {
+            font-size: 2.5rem;
+        }
+        @media(min-width: 640px) {
+            font-size: 3.5rem;
+        }
+        @media(min-width: 640px) {
+            font-size: 4.5rem;
+        }
+    }
+    &__score {
+        font-family: arial;
+        font-size: 3rem;
+        color: #333;
+        text-transform: capitalize;
+        @media(min-width: 360px) {
+            font-size: 3.5rem;
+        }
+        @media(min-width: 640px) {
+            font-size: 4.5rem;
+        }
+        @media(min-width: 640px) {
+            font-size: 5.5rem;
+        }
+    }
+    &__score-text {
+        text-align: center;
+    }
+    &__timer {
+        font-family: arial;
+        font-size: 4rem;
+        color: #333;
+        @media(min-width: 360px) {
+            font-size: 4.5rem;
+        }
+        @media(min-width: 640px) {
+            font-size: 5.5rem;
+        }
+        @media(min-width: 640px) {
+            font-size: 6.5rem;
+        }
+    }
+    &__counter {
+        text-align: center;
+    }
+}
